@@ -1,0 +1,57 @@
+---
+import { Image } from "astro:assets";
+import ContactUs from "./ContactUs.astro";
+import Form from "./Form.astro";
+import dalfornoImg from "../../assets/dalfornoMapo-P.jpg";
+// import dalfornoImgDes from "../../assets/dalforno-map.png";
+import dalfornoImgDes from "../../assets/maximMaps.png";
+---
+
+<footer>
+  <ContactUs />
+  <Form />
+  <div class="flex justify-center">
+    <div
+      class="relative flex justify-center flex-col overflow-hidden lg:h-[550px] lg:w-[1000px]"
+    >
+      <Image
+        loading="lazy"
+        height={3000}
+        width={1000}
+        format="avif"
+        quality={"high"}
+        src={dalfornoImg}
+        alt="map of dalforno"
+        class="block sm:hidden"
+      />
+      <Image
+        loading="lazy"
+        height={3000}
+        width={1000}
+        format="avif"
+        quality={"high"}
+        src={dalfornoImgDes}
+        alt="map of dalforno"
+        class="hidden sm:block"
+      />
+      <div class="group absolute top-6 right-6">
+        <button
+          class="h-10 w-40 bg-white sm:hover:bg-gray-100/80 shadow-[rgba(0,_0,_0,_0.25)_0px_3px_8px] duration-200"
+        >
+          <a
+            aria-label="View Larger Map on google maps"
+            class="text-blue-600 sm:font-semibold sm:group-hover:text-blue-500 duration-200"
+            target="_blank"
+            href="https://www.google.com/maps/place/Maxim/@38.9600622,20.7546424,18z/data=!4m14!1m7!3m6!1s0x135c38e3f2e46663:0xe22d907be05f431!2sMaxim!8m2!3d38.9599914!4d20.754673!16s%2Fg%2F11ckkx40tc!3m5!1s0x135c38e3f2e46663:0xe22d907be05f431!8m2!3d38.9599914!4d20.754673!16s%2Fg%2F11ckkx40tc!5m1!1e4?entry=ttu"
+            >Μεγαλύτερο χάρτη</a
+          >
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-center pt-8 pb-8 text-gray-800">
+    <div class="w-48 text-center">
+      <p>© 2024 Maxim</p>
+    </div>
+  </div>
+</footer>
